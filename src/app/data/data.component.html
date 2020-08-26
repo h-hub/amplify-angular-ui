@@ -1,0 +1,13 @@
+<h2 class="bg-warning">Reading data from AWS DynamoDB</h2>
+
+
+<div class="bg-light p-4" *ngIf="dbItem">
+    <h3>{{dbItem.name}}</h3>
+    <p>Id: {{dbItem.id}}</p>
+    <p>Host: {{dbItem.host}}</p>
+    <p>Name: {{dbItem.name}}</p>
+    <p>Count: {{dbItem.count}}</p>
+    <p>API Status: {{dbItem.isUp}}</p>
+</div>
+
+
