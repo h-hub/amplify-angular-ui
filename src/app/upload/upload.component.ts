@@ -38,7 +38,7 @@ export class UploadComponent implements OnInit {
           this.file = null;
         },
         error => {
-          this.error = "Unable to connect to the service.";
+          this.error = error.error;
         }
       )
     })

@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="name">Image</label>
 
-            <input type="file" id="file" class="form-control" [(ngModel)]="file" (change)="handleFileInput($event.target.files)" required>
+            <input type="file" id="file" class="form-control" (change)="handleFileInput($event.target.files)" required>
         </div>
 
         <button type="submit" class="btn btn-warning submit-btn"
@@ -12,6 +12,8 @@
 
     </form>
 
+    <span *ngIf="error" class="bg-white">{{error}}</span>
+    <br>
     <span >Image url : {{url}}</span>
     <br>
     <img [src]="url" class="img-fluid m-2 p-5" alt="Responsive image">
