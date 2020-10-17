@@ -53,4 +53,15 @@ export class ServiceService {
     return this.http.get<any>( this.apiUrl+'/test', {headers} );
   }
 
+  uploadImage(token: any, image: any){
+
+    var formData: any = new FormData();
+    formData.append("imageFile", image);
+
+    const  headers = new  HttpHeaders().set("authorization", "Bearer "+token);
+
+    return this.http.post<any>( this.apiUrl+'/image/upload', formData, {headers} );
+
+  }
+
 }

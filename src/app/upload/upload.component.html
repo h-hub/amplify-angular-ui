@@ -1,0 +1,19 @@
+<h2 class="bg-info p-2">Upload to S3</h2>
+<div class="bg-light p-4">
+    <form class="m-2" #fileForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label for="name">Image</label>
+
+            <input type="file" id="file" class="form-control" [(ngModel)]="file" (change)="handleFileInput($event.target.files)" required>
+        </div>
+
+        <button type="submit" class="btn btn-warning submit-btn"
+            [disabled]="submitted || fileForm.form.invalid">Submit</button>
+
+    </form>
+
+    <span >Image url : {{url}}</span>
+    <br>
+    <img [src]="url" class="img-fluid m-2 p-5" alt="Responsive image">
+
+</div>
