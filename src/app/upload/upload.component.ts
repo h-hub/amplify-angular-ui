@@ -35,10 +35,11 @@ export class UploadComponent implements OnInit {
         data => {
           this.url = data.url;
           this.msg = "Uploaded Image"
-          this.file = null;
+          this.error = null;
         },
         error => {
           this.error = error.error;
+          this.msg = null;
         }
       )
     })
